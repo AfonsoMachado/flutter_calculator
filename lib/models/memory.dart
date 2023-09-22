@@ -5,7 +5,11 @@ class Memory {
     return _value;
   }
 
+  _allClear() {
+    _value = '0';
+  }
+
   void applyCommand(String command) {
-    _value += command;
+    command == 'AC' ? _allClear() : _value += command;
   }
 }
