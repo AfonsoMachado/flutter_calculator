@@ -9,8 +9,26 @@ class Button extends StatelessWidget {
   final bool big;
   final Color color;
 
-  const Button(
-      {super.key, required this.text, this.big = false, this.color = DEFAULT});
+  const Button({
+    super.key,
+    required this.text,
+    this.big = false,
+    this.color = DEFAULT,
+  });
+
+  const Button.big({
+    super.key,
+    required this.text,
+    this.big = true,
+    this.color = DEFAULT,
+  });
+
+  const Button.operation({
+    super.key,
+    required this.text,
+    this.big = false,
+    this.color = OPERATION,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -12,14 +12,13 @@ class Keyboard extends StatelessWidget {
       child: Column(
         children: [
           ButtonRow([
-            Button(
+            Button.big(
               text: 'AC',
-              big: true,
             ),
             Button(
               text: '%',
             ),
-            Button(
+            Button.operation(
               text: '/',
             ),
           ]),
@@ -33,7 +32,7 @@ class Keyboard extends StatelessWidget {
             Button(
               text: '9',
             ),
-            Button(
+            Button.operation(
               text: 'x',
             ),
           ]),
@@ -47,7 +46,7 @@ class Keyboard extends StatelessWidget {
             Button(
               text: '6',
             ),
-            Button(
+            Button.operation(
               text: '-',
             ),
           ]),
@@ -61,19 +60,18 @@ class Keyboard extends StatelessWidget {
             Button(
               text: '3',
             ),
-            Button(
+            Button.operation(
               text: '+',
             ),
           ]),
           ButtonRow([
-            Button(
+            Button.big(
               text: '0',
-              big: true,
             ),
             Button(
               text: '.',
             ),
-            Button(
+            Button.operation(
               text: '=',
             ),
           ]),
