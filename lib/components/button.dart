@@ -40,6 +40,8 @@ class Button extends StatelessWidget {
       flex: big ? 2 : 1,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+            shape:
+                const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
             backgroundColor: color,
             textStyle: const TextStyle(
                 color: Colors.white,
