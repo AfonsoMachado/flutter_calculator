@@ -8,12 +8,14 @@ class Button extends StatelessWidget {
   final String text;
   final bool big;
   final Color color;
+  final void Function(String) callback;
 
   const Button({
     super.key,
     required this.text,
     this.big = false,
     this.color = DEFAULT,
+    required this.callback,
   });
 
   const Button.big({
@@ -21,6 +23,7 @@ class Button extends StatelessWidget {
     required this.text,
     this.big = true,
     this.color = DEFAULT,
+    required this.callback,
   });
 
   const Button.operation({
@@ -28,6 +31,7 @@ class Button extends StatelessWidget {
     required this.text,
     this.big = false,
     this.color = OPERATION,
+    required this.callback,
   });
 
   @override
@@ -41,7 +45,7 @@ class Button extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 32,
                 fontWeight: FontWeight.w300)),
-        onPressed: () {},
+        onPressed: () => callback(text),
         child: Text(text),
       ),
     );
