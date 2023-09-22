@@ -6,6 +6,7 @@ class Memory {
   int _bufferIndex = 0;
   String? _operation;
   bool _wipeValue = false;
+  String? _lastCommand;
 
   String get value {
     return _value;
@@ -73,6 +74,11 @@ class Memory {
   }
 
   void applyCommand(String command) {
+    if (_isReplacingOperation(command)) {
+      _operation = command;
+      return;
+    }
+
     if (command == 'AC') {
       _allClear();
     } else if (operations.contains(command)) {
@@ -80,5 +86,14 @@ class Memory {
     } else {
       _addDigit(command);
     }
+
+    _lastCommand = command;
+  }
+
+  _isReplacingOperation(String command) {
+    return operations.contains(_lastCommand) &&
+        operations.contains(command) &&
+        _lastCommand != '=' &&
+        command != '=';
   }
 }
