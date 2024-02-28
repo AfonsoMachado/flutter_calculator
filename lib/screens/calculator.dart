@@ -28,6 +28,7 @@ class _CalculatorState extends State<Calculator> {
       home: Column(
         children: [Display(memory.value), Keyboard(_onPressed)],
       ),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
